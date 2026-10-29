@@ -1,0 +1,16 @@
+# DSH memory plugin — cordis patch configuration
+# 安装后将此文件内容合并到 ~/.dsh/web/cordis.patch.yml
+
+mcpServers:
+  dsh-memory:
+    url: "http://127.0.0.1:3100/mcp"
+    name: "Memory Server"
+    description: "持久记忆服务端，支持 CRUD + 语义搜索"
+
+hooks:
+  agent/start-session:
+    - tool: "@fgoeva/dsh-memory::load_memory_context"
+      args: {}
+  agent/turn-completed:
+    - tool: "@fgoeva/dsh-memory::save_turn_summary"
+      args: {}

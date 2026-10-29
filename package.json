@@ -1,0 +1,7 @@
+{
+  "name": "@fgoeva/plugins",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "FGOEVA DSH / OpenClaw 插件合集 — monorepo"
+}
